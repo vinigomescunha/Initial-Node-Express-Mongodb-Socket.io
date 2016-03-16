@@ -1,0 +1,25 @@
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 160px; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 160px;
+  background-color: #f5f5f5; }
+
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: .25rem;
+  padding: 10px;
+  cursor: pointer; }
+
+.card p {
+  max-height: 200px;
+  overflow-y: scroll; }
+
+.card-blockquote {
+  font-size: 40px;}

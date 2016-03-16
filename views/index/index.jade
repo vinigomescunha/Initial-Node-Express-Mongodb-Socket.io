@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+      nav(class="navbar navbar-static-top")
+        div(class="container")
+          div(class="form-group form-inline nav nav-pills pull-xs-left")
+            h1(class="text-muted") Cards
+            p Create Cards 
+          if(!uid) 
+            form(method='post', action='/users/login', class="pull-xs-right")
+              div(class="form-group form-inline nav nav-pills ")
+                  label(for="user1", class="m-l-1 m-r-1") Username
+                  input(type="text", name='user', class="form-control", id="user1", placeholder="Username")
+              div(class="form-group form-inline nav nav-pills text-md-right m-t-1")
+                  label(for="pass1", class="m-l-1 m-r-1") Password
+                  input(type="password", name='password', class="form-control", id="pass1", placeholder="Password")
+              div(class="form-group form-inline nav nav-pills text-md-right m-t-1")
+                  button(type="submit", class="m-l-1 m-r-0 btn btn-success-outline form-inline pull-xs-right") Login
+                  a(id="register", class="btn btn-primary-outline form-inline pull-xs-right", href="#") Register
+          else
+              p(class="nav-link nav nav-pills pull-xs-right") 
+                span(class="nav-link nav nav-pills pull-xs-left") welcome #{uid} 
+                a(class="nav-link nav nav-pills pull-xs-right", href="/users/logout") Logout
+                a(class="nav-link nav nav-pills pull-xs-right", id="create-card", href="#") Create Card
+      div(class="row m-t-2 m-l-0 m-r-0")
+        div(class="container")
+          div(class="col-md-12 text-md-center")
+            h2 See below the list of cards created
+      div(class="row m-t-2 m-l-0 m-r-0")
+        div(class="container",id="card-container")
+
+
+
